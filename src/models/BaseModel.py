@@ -1,8 +1,6 @@
 from peewee import *
 
-import constants
-
-DATABASE_FILE = '../poke-merch.sql'
+DATABASE_FILE = '../crawler.sql'
 
 database = SqliteDatabase(DATABASE_FILE)
 
