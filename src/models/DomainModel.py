@@ -21,3 +21,4 @@ class DomainModel(BaseModel):
         indexes = (
             (('scheme', 'domain_name'), True),
         )
+        
