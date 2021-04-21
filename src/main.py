@@ -18,6 +18,7 @@ def test():
     parsed = urlparse(url)
     dm, created = DomainModel.get_or_create(scheme=parsed.scheme, domain_name=parsed.netloc)
     chm, created = CrawHistoryModel.get_or_create(url='test', status_code=200, date_crawled=datetime.now(), domain_id=dm.domain_id)
+    cqm, created = CrawlQueueModel.get_or_create(scheme='https', domain_name='test-domain', priority=0, referer='direkte.vg.no', date_added=datetime.now())
 
 def setup_logging():
     if not os.path.isdir(logFolder):
@@ -27,7 +28,7 @@ def setup_logging():
 
 def setup_database():
     database.init(DATABASE_FILE)
-    database.create_tables([DomainModel, CrawHistoryModel])
+    database.create_tables([DomainModel, CrawHistoryModel, CrawlQueueModel])
 
 if __name__ == '__main__':
     setup_logging()
