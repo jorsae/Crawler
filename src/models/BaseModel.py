@@ -1,8 +1,6 @@
 from peewee import *
 
-DATABASE_FILE = '../crawler.sql'
-
-database = SqliteDatabase(DATABASE_FILE)
+database = SqliteDatabase(None)
 
 class BaseModel(Model):
     class Meta:
