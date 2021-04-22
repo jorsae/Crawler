@@ -19,6 +19,7 @@ def test():
     dm, created = DomainModel.get_or_create(scheme=parsed.scheme, domain_name=parsed.netloc)
     chm, created = CrawHistoryModel.get_or_create(url='test', status_code=200, date_crawled=datetime.now(), domain_id=dm.domain_id)
     cqm, created = CrawlQueueModel.get_or_create(scheme='https', domain_name='test-domain', priority=0, referer='direkte.vg.no', date_added=datetime.now())
+    cem, created = CrawlEmailModel.get_or_create(email='test_email@test.com', crawl_history_id=chm.crawl_history_id)
 
 def setup_logging(folder, file):
     if not os.path.isdir(folder):
@@ -28,7 +29,7 @@ def setup_logging(folder, file):
 
 def setup_database():
     database.init(DATABASE_FILE)
-    database.create_tables([DomainModel, CrawHistoryModel, CrawlQueueModel])
+    database.create_tables([DomainModel, CrawHistoryModel, CrawlQueueModel, CrawlEmailModel])
 
 if __name__ == '__main__':
     setup_logging(logFolder, logFile)
