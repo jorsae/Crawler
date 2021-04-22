@@ -25,9 +25,10 @@ def main():
     test_robots()
 
 def test_robots():
-    req = requests.get('https://www.vg.no/robots.txt')
+    req = requests.get('https://www.buzzfeed.com/robots.txt')
     rp = RobotParser(req.text)
     rp.parse()
+    print(rp.crawl_delay)
 
 def test():
     url = 'http://direkte.vg.no/coronaviruset/videos/215460?wide=&utm_source=vgfront&utm_content=hovedlopet_row1_pos1'

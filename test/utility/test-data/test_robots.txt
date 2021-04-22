@@ -1,0 +1,11 @@
+user-agent: *
+Crawl-delay: 500
+user-agent: test
+Disallow: /please-dontjoin
+user-agent: *
+allow: /pleasebethere
+user-agent: asdasd
+allow: ?dontbethere
+user-agent: *
+disallow: ?please=123
+Crawl-Delay: 400
