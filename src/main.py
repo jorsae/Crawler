@@ -5,6 +5,7 @@ from datetime import datetime
 import logging
 
 from models import *
+from utility import *
 
 """
     Settings to have:
@@ -20,11 +21,13 @@ logFolder = '../logs'
 logFile = 'crawler.log'
 
 def main():
-    test()
-    req = requests.get('http://vg.no', allow_redirects=False)
-    print(req.status_code)
-    print(req.headers)
+    # test()
+    test_robots()
 
+def test_robots():
+    req = requests.get('https://www.vg.no/robots.txt')
+    rp = RobotParser(req.text)
+    rp.parse()
 
 def test():
     url = 'http://direkte.vg.no/coronaviruset/videos/215460?wide=&utm_source=vgfront&utm_content=hovedlopet_row1_pos1'

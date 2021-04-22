@@ -1,4 +1,11 @@
 import pytest
+import sys
+sys.path.append('src')
+from utility import *
+
+def read_file(filename):
+    pass
 
 def test():
-    assert(True) == True
+    rp = RobotParser('robot text')
+    rp.parse()

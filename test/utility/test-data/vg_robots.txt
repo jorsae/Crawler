@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /tegneserier/salesposter
+Disallow: /poll
+
+user-agent: Googlebot-News
+disallow: /annonsorinnhold/
+disallow: /innstikk/
+disallow: /?embed=true
+disallow: /arkiv/
+disallow: /front/
+disallow: /ads/prewarm/
+disallow: /adblock-survey/
