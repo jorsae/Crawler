@@ -1,0 +1,30 @@
+# 80legs
+User-agent: 008
+Disallow: /
+
+# 80legs' new crawler
+User-agent: voltron
+Disallow: /
+Allow: /test
+
+User-Agent: bender
+Disallow: /my_shiny_metal_ass
+
+User-Agent: Gort
+Disallow: /earth
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: PiplBot
+Disallow: /
+
+User-Agent: *
+Disallow: /r/*/comments/*/*/c*
+Disallow: /r/*/user/
+Disallow: /gold?
+Disallow: /static/button/button1.js
+Disallow: /static/button/button1.html
+Allow: /
+Allow: /sitemaps/*.xml
+Allow: /posts/*
