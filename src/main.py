@@ -20,10 +20,10 @@ def test():
     chm, created = CrawHistoryModel.get_or_create(url='test', status_code=200, date_crawled=datetime.now(), domain_id=dm.domain_id)
     cqm, created = CrawlQueueModel.get_or_create(scheme='https', domain_name='test-domain', priority=0, referer='direkte.vg.no', date_added=datetime.now())
 
-def setup_logging():
-    if not os.path.isdir(logFolder):
-        os.makedirs(logFolder)
-    handler = logging.FileHandler(filename=f'{logFolder}/{logFile}', encoding='utf-8', mode='a+')
+def setup_logging(folder, file):
+    if not os.path.isdir(folder):
+        os.makedirs(folder)
+    handler = logging.FileHandler(filename=f'{folder}/{file}', encoding='utf-8', mode='a+')
     logging.basicConfig(handlers=[handler], level=logging.INFO, format='%(asctime)s %(levelname)s:[%(filename)s:%(lineno)d] %(message)s')
 
 def setup_database():
@@ -31,6 +31,6 @@ def setup_database():
     database.create_tables([DomainModel, CrawHistoryModel, CrawlQueueModel])
 
 if __name__ == '__main__':
-    setup_logging()
+    setup_logging(logFolder, logFile)
     setup_database()
     main()
