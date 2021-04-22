@@ -1,10 +1,19 @@
 from urllib.parse import urlparse
+import requests
 import os
 from datetime import datetime
 import logging
 
 from models import *
 
+"""
+    Settings to have:
+        database file
+        log folder
+        log file name
+        max_redirects to allow (to make sure it can't be stuck in a loop)
+        user-agent text
+"""
 # TODO: Move to settings.json
 DATABASE_FILE = '../crawler.sql'
 logFolder = '../logs'
@@ -12,6 +21,10 @@ logFile = 'crawler.log'
 
 def main():
     test()
+    req = requests.get('http://vg.no', allow_redirects=False)
+    print(req.status_code)
+    print(req.headers)
+
 
 def test():
     url = 'http://direkte.vg.no/coronaviruset/videos/215460?wide=&utm_source=vgfront&utm_content=hovedlopet_row1_pos1'
