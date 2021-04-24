@@ -20,7 +20,7 @@ def test_parse_allow(file, expected):
     assert(rp.allow) == expected
 
 testdata_parse_disallow = [
-    ('vg_robots.txt', ['/tegneserier/salesposter', '/poll']),
+    ('vg_robots.txt', ['/tegneserier/salesposter', '/poll', '/Poll', '/polL']),
     ('reddit_robots.txt', ['/r/*/comments/*/*/c*', '/r/*/user/', '/gold?', '/static/button/button1.js', '/static/button/button1.html', '/CAPS']),
     ('test_robots.txt', ['?please=123'])
 ]

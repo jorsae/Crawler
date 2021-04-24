@@ -1,6 +1,8 @@
 User-agent: *
 Disallow: /tegneserier/salesposter
 Disallow: /poll
+Disallow: /Poll
+Disallow: /polL
 
 user-agent: Googlebot-News
 disallow: /annonsorinnhold/
