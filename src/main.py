@@ -30,6 +30,7 @@ def test2():
     sp = Spider('reddit.com')
     sp.crawl_robots()
     sp.test()
+    sp.crawl()
 
 def test_robots():
     req = requests.get('https://www.buzzfeed.com/robots.txt')

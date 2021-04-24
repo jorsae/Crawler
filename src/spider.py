@@ -9,9 +9,14 @@ class Spider():
         self.rp = None
     
     def test(self):
-        print(self.rp.allow)
-        print(self.rp.disallow)
-        print(self.rp.crawl_delay)
+        if self.rp is not None:
+            print(self.rp.allow)
+            print(self.rp.disallow)
+            print(self.rp.crawl_delay)
+
+    def crawl(self):
+        req = requests.get(f'https://{self.domain}')
+        print(req.text)
 
     def crawl_robots(self):
         req = requests.get(f'https://{self.domain}/robots.txt')
