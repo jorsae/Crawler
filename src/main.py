@@ -6,6 +6,7 @@ import logging
 
 from models import *
 from utility import *
+from spider import Spider
 
 """
     Settings to have:
@@ -21,8 +22,14 @@ logFolder = '../logs'
 logFile = 'crawler.log'
 
 def main():
+    test2()
     # test()
-    test_robots()
+    # test_robots()
+
+def test2():
+    sp = Spider('reddit.com')
+    sp.crawl_robots()
+    sp.test()
 
 def test_robots():
     req = requests.get('https://www.buzzfeed.com/robots.txt')
